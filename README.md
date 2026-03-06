@@ -4,13 +4,9 @@
 
 Storage Machine is a small but realistic and rather complete back-end of a Web-application. It does not include the front-end part so you will use Postman or similar to interact with it.
 
-The goal is to see an example of a complete system made using F# and get acquainted with the Onion architecture. You will do this by example functionalities and (architectural and FP) patterns already implemented in the back-end and extend it with new ones, by applying the same patterns.
+The goal is to see an example of a complete system made using C# and get acquainted with the Onion architecture. You will do this by example functionalities and (architectural and OOP) patterns already implemented in the back-end and extend it with new ones, by applying the same patterns.
 
 ## Resources
-
-* As always, [F# language reference](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/).
-* Storage Machine uses [Giraffe](https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md) -- a library for creating Web-applications using F# as a thin layer on top of ASP.NET Core in FP style, unlike heavily OO-based ASP.NET Core model.
-* For JSON serialization the [Thoth.Json](https://thoth-org.github.io/Thoth.Json/documentation/concept/introduction.html) library is used because it provides FP-oriented combinator style of JSON (de)serialization.
 
 ## Exercise 0 (warming up)
 
