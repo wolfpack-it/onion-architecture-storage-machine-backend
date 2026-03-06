@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Contoso.StorageMachine.DataAccess\Contoso.StorageMachine.DataAccess.csproj" />
-    <ProjectReference Include="..\Contoso.StorageMachine.Service\Contoso.StorageMachine.Service.csproj" />
   </ItemGroup>
 
 </Project>
