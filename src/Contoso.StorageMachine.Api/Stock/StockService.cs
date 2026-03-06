@@ -7,22 +7,22 @@ public sealed record ProductsOverview(IReadOnlyList<(Product Product, int Quanti
 public static class StockService
 {
     /// <summary>An overview of all bins currently stored in the Storage Machine.</summary>
-    public static List<Bin> BinOverview(IStockDataAccess dataAccess)
+    public static List<Bin> BinOverview(IStockRepository repository)
         // Trivially
-        => dataAccess.RetrieveAllBins();
+        => repository.RetrieveAllBins();
 
     /// <summary>An overview of actual stock currently stored in the Storage Machine. Actual stock is defined as all non-empty bins.</summary>
-    public static List<Bin> StockOverview(IStockDataAccess dataAccess)
+    public static List<Bin> StockOverview(IStockRepository repository)
     {
         // Perform I/O
-        var allBins = dataAccess.RetrieveAllBins();
+        var allBins = repository.RetrieveAllBins();
         // Use the model which provides the definition of a bin being (non-)empty
         return allBins.Where(b => b.IsNotEmpty).ToList();
     }
 
     /// <summary>An overview of all products stored in the Storage Machine, regardless what bins contain them.</summary>
     // Exercise 0: What parameters are needed here?
-    public static ProductsOverview ProductsInStock(IStockDataAccess dataAccess)
+    public static ProductsOverview ProductsInStock(IStockRepository repository)
     {
         // Use the model
         // Exercise 0: Fill this in — call StockModel.AllProducts with the right argument.

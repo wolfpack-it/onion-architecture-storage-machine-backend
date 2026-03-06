@@ -6,6 +6,16 @@ Storage Machine is a small but realistic and rather complete back-end of a Web-a
 
 The goal is to see an example of a complete system made using C# and get acquainted with the Onion architecture. You will do this by example functionalities and (architectural and OOP) patterns already implemented in the back-end and extend it with new ones, by applying the same patterns.
 
+## Csharp version
+
+Changes from the F# version:
+
+- No separate service project, this is combined in the presentation layer / "Api" project
+- Rename of DataAccess layer to "Infrastructure". Because it's more than just data access (e.g. offloed sending messages to mail by mailchimp, etc)
+- Rename of DataAccess classes to Repository. Because that's just how we call it at Wolfpack.
+- Rename of model layer to "Domain". Because that's just how we call it at Wolfpack.
+- Introduce Contoso organization name for assemblies and namespaces. Because we work with many projects.
+
 ## Resources
 
 ## Exercise 0 (warming up)

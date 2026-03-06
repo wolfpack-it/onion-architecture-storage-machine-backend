@@ -7,15 +7,15 @@ public static class RepackingService
     /// A trivial use-case for retrieving a tree of bins based on the identifier of the outer bin.
     /// Result is null if the outer bin does not exist.
     /// </summary>
-    public static BinTree? ViewBinTree(IBinTreeDataAccess dataAccess, BinIdentifier bin)
-        => dataAccess.RetrieveBinTree(bin);
+    public static BinTree? ViewBinTree(IBinTreeRepository repository, BinIdentifier bin)
+        => repository.RetrieveBinTree(bin);
 
     /// <summary>
     /// Count all products contained in all bins of the identified bin tree.
     /// Result is null when there is no bin tree for the provided identifier.
     /// </summary>
-    public static int? ProductCount(IBinTreeDataAccess dataAccess, BinIdentifier bin)
-        => dataAccess.RetrieveBinTree(bin) is { } binTree
+    public static int? ProductCount(IBinTreeRepository repository, BinIdentifier bin)
+        => repository.RetrieveBinTree(bin) is { } binTree
             ? BinTree.ProductCount(binTree)
             : null;
 }

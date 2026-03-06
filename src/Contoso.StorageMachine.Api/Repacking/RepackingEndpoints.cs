@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using System.Text.Json.Serialization;
 
 namespace Contoso.StorageMachine.Repacking;
@@ -32,17 +30,17 @@ public static class RepackingEndpoints
     public static void Map(WebApplication app)
     {
         // Retrieve a JSON representation of a single bin tree stored in the Storage Machine.
-        app.MapGet("/bin/tree/{binIdentifier}", (string binIdentifier, IBinTreeDataAccess dataAccess) =>
+        app.MapGet("/bin/tree/{binIdentifier}", (string binIdentifier, IBinTreeRepository Repository) =>
             BinIdentifier.Make(binIdentifier).Match<IResult>(
-                onOk: id => RepackingService.ViewBinTree(dataAccess, id) is { } tree
+                onOk: id => RepackingService.ViewBinTree(Repository, id) is { } tree
                     ? Results.Ok(BinTreeDto.FromBinTree(tree))
                     : Results.NotFound("The given bin is not stored in the machine"),
                 onError: _ => Results.BadRequest("Invalid bin identifier")));
 
         // Count all products contained in all bins of a single bin tree currently stored in the Storage Machine.
-        app.MapGet("/bin/tree/{binIdentifier}/products/count", (string binIdentifier, IBinTreeDataAccess dataAccess) =>
+        app.MapGet("/bin/tree/{binIdentifier}/products/count", (string binIdentifier, IBinTreeRepository Repository) =>
             BinIdentifier.Make(binIdentifier).Match<IResult>(
-                onOk: id => RepackingService.ProductCount(dataAccess, id) is { } count
+                onOk: id => RepackingService.ProductCount(Repository, id) is { } count
                     ? Results.Text($"The bin tree contains {count} products")
                     : Results.NotFound("The given bin is not stored in the machine"),
                 onError: _ => Results.BadRequest("Invalid bin identifier")));

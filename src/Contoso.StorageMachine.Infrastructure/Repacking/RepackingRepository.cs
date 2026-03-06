@@ -1,7 +1,7 @@
 namespace Contoso.StorageMachine.Repacking;
 
 /// <summary>Data access operations of the Repacking component implemented using the simulated in-memory DB.</summary>
-public sealed class RepackingDataAccess : IBinTreeDataAccess
+public sealed class RepackingRepository : IBinTreeRepository
 {
     public BinTree? RetrieveBinTree(BinIdentifier outerBin)
     {

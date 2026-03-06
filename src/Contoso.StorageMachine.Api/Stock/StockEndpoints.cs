@@ -31,15 +31,15 @@ public static class StockEndpoints
     public static void Map(WebApplication app)
     {
         // An overview of all bins currently stored in the Storage Machine.
-        app.MapGet("/bins", (IStockDataAccess dataAccess) =>
-            StockService.BinOverview(dataAccess).Select(BinDto.FromBin));
+        app.MapGet("/bins", (IStockRepository Repository) =>
+            StockService.BinOverview(Repository).Select(BinDto.FromBin));
 
         // An overview of actual stock currently stored in the Storage Machine. Actual stock is defined as all non-empty bins.
-        app.MapGet("/stock", (IStockDataAccess dataAccess) =>
-            StockService.StockOverview(dataAccess).Select(BinDto.FromBin));
+        app.MapGet("/stock", (IStockRepository Repository) =>
+            StockService.StockOverview(Repository).Select(BinDto.FromBin));
 
         // An overview of all products stored in the Storage Machine, regardless what bins contain them.
-        app.MapGet("/stock/products", (IStockDataAccess dataAccess) =>
+        app.MapGet("/stock/products", (IStockRepository Repository) =>
         {
             // Exercise 0: fill this in to complete this HTTP handler.
             throw new NotImplementedException("Exercise 0: fill this in to complete this HTTP handler.");

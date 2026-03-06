@@ -7,8 +7,8 @@ using Contoso.StorageMachine.Repacking;
 var builder = WebApplication.CreateBuilder(args);
 
 // Dependency injection: data access implementations
-builder.Services.AddSingleton<IStockDataAccess, StockDataAccess>();
-builder.Services.AddSingleton<IBinTreeDataAccess, RepackingDataAccess>();
+builder.Services.AddSingleton<IStockRepository, StockRepository>();
+builder.Services.AddSingleton<IBinTreeRepository, RepackingRepository>();
 
 // JSON serialization: camelCase property names
 builder.Services.ConfigureHttpJsonOptions(options =>
