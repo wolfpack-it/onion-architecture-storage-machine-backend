@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Contoso.Stora
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Contoso.StorageMachine.Application\Contoso.StorageMachine.Application.csproj", "{9FAAF2FE-1C2E-4C00-898E-CBD1B79E562D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Contoso.StorageMachine.Infrastructure\Contoso.StorageMachine.Infrastructure.csproj", "{E8F0C62B-F719-46A0-BDF5-9F8B4C5EC48C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "src\Contoso.StorageMachine.DataAccess\Contoso.StorageMachine.DataAccess.csproj", "{E8F0C62B-F719-46A0-BDF5-9F8B4C5EC48C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
