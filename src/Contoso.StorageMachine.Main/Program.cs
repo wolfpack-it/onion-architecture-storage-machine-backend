@@ -10,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IStockRepository, StockRepository>();
 builder.Services.AddSingleton<IBinTreeRepository, RepackingRepository>();
 
+// API documentation: OpenAPI + Scalar UI
+builder.Services.AddSwaggerDocumentation();
+
 // JSON serialization: camelCase property names
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
@@ -28,6 +31,7 @@ app.UseHsts();
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseSwaggerDocumentation();
 
 // A basic example of handling a GET request
 app.MapGet("/hello", () => Results.Text("Storage machine is running"));

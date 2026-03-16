@@ -1,5 +1,6 @@
 <Solution>
-  <Project Path="src/Contoso.StorageMachine.Api/Contoso.StorageMachine.Api.csproj" />
+  <Project Path="src/Contoso.StorageMachine.Main/Contoso.StorageMachine.Main.csproj" />
+  <Project Path="src/Contoso.StorageMachine.Service/Contoso.StorageMachine.Service.csproj" />
   <Project Path="src/Contoso.StorageMachine.Application/Contoso.StorageMachine.Application.csproj" />
   <Project Path="src/Contoso.StorageMachine.DataAccess/Contoso.StorageMachine.DataAccess.csproj" />
   <Project Path="src/Contoso.StorageMachine.Domain/Contoso.StorageMachine.Domain.csproj" />

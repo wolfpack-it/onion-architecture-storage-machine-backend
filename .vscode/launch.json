@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/StorageMachine/bin/Debug/net8.0/StorageMachine.dll",
+            "program": "${workspaceFolder}/src/Contoso.StorageMachine.Main/bin/Debug/net10.0/Contoso.StorageMachine.Main.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",

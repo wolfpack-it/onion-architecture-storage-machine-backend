@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contoso.StorageMachine.Service\Contoso.StorageMachine.Service.csproj" />  
+    <ProjectReference Include="..\Contoso.StorageMachine.DataAccess\Contoso.StorageMachine.DataAccess.csproj" />    
+    <ProjectReference Include="..\Contoso.StorageMachine.Application\Contoso.StorageMachine.Application.csproj" />
+    <ProjectReference Include="..\Contoso.StorageMachine.Domain\Contoso.StorageMachine.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.5" />
+  </ItemGroup>
+
+</Project>
+
